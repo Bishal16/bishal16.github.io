@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mahathir Mohammad Bishal | Backend Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <style>
     * {
       margin: 0;
@@ -13,84 +14,91 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      padding: 2rem;
+      background: #0f172a;
+      color: #f1f5f9;
       line-height: 1.6;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
     }
     header {
       text-align: center;
       margin-bottom: 3rem;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      color: #38bdf8;
     }
-    p.subtitle {
-      font-size: 1.1rem;
-      color: #ccc;
+    .subtitle {
+      color: #94a3b8;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
     }
     section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
     h2 {
-      color: #00bcd4;
+      color: #7dd3fc;
+      font-size: 1.8rem;
       margin-bottom: 1rem;
-      font-size: 1.5rem;
-      border-bottom: 2px solid #00bcd4;
+      border-bottom: 2px solid #38bdf8;
       display: inline-block;
       padding-bottom: 0.3rem;
     }
     ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-    ul li {
-      margin-bottom: 0.8rem;
+      list-style-type: disc;
+      padding-left: 1.5rem;
     }
     a {
-      color: #00e5ff;
+      color: #38bdf8;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.reveal {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
+    <header class="fade-up">
       <h1>Mahathir Mohammad Bishal</h1>
       <p class="subtitle">Backend Developer | Java • Spring Boot • Kafka • Remote-Ready</p>
     </header>
 
-    <section>
+    <section class="fade-up">
       <h2>About Me</h2>
       <p>
-        Backend-focused software engineer with 2 years of experience building scalable Java/Spring Boot systems. I've built real-time VoIP billing engines integrated with FreeSWITCH, Kafka pipelines, and multi-reseller platforms. Passionate about clean code, system architecture, and building things that work.
+        I'm a backend-focused software engineer with 2 years of experience building scalable systems using Java and Spring Boot. I’ve built real-time VoIP billing engines, Kafka-based call flow systems, and multi-tenant backend platforms. I love working with clean architecture, DevOps tools, and solving backend challenges.
       </p>
     </section>
 
-    <section>
+    <section class="fade-up">
       <h2>Tech Stack</h2>
-      <p>Java, Spring Boot, Kafka, FreeSWITCH, PostgreSQL, MySQL, Docker, C#, ASP.NET, Git, Linux</p>
+      <p>Java, Spring Boot, Kafka, FreeSWITCH, MySQL, PostgreSQL, Docker, C#, ASP.NET, Git, Linux</p>
     </section>
 
-    <section>
+    <section class="fade-up">
       <h2>Featured Projects</h2>
       <ul>
-        <li><strong><a href="https://github.com/Bishal16/COVID19-Health-Related-Data-Classification-Website">COVID-19 Health Data Classifier</a></strong> – NLP-powered web app (Published in Heliyon, Q1 Journal)</li>
-        <li><strong><a href="https://github.com/Bishal16/Facial-Expression-Recognition">Facial Expression Recognition</a></strong> – Deep learning model for emotion classification</li>
-        <li><strong><a href="https://gitlab.com/romatoo/romatoo_email">Web Mailer</a></strong> – Real-time Gmail-style email client with file attachments</li>
-        <li><strong><a href="https://github.com/Bishal16/Online_judge_update_tracker">Online Judge Tracker</a></strong> – Dashboard to track coding platform activity</li>
+        <li><strong><a href="https://github.com/Bishal16/COVID19-Health-Related-Data-Classification-Website">COVID-19 Health Data Classifier</a></strong> – NLP-powered web app published in Heliyon (Q1 Journal)</li>
+        <li><strong><a href="https://github.com/Bishal16/Facial-Expression-Recognition">Facial Expression Recognition</a></strong> – CNN-based expression detection from facial input</li>
+        <li><strong><a href="https://gitlab.com/romatoo/romatoo_email">Web Mailer</a></strong> – Real-time Gmail-like client with draft and file attachment support</li>
+        <li><strong><a href="https://github.com/Bishal16/Online_judge_update_tracker">Online Judge Tracker</a></strong> – Tracks coding progress from multiple platforms</li>
       </ul>
     </section>
 
-    <section>
+    <section class="fade-up">
       <h2>Publications</h2>
       <ul>
         <li><a href="https://www.cell.com/heliyon/fulltext/S2405-8440(24)10134-X">COVIDHealth – Heliyon, Elsevier (Q1 Journal)</a></li>
@@ -98,7 +106,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="fade-up">
       <h2>Connect With Me</h2>
       <ul>
         <li><a href="https://www.linkedin.com/in/mahathir-bishal-7b493b15a/">LinkedIn</a></li>
@@ -108,5 +116,15 @@
       </ul>
     </section>
   </div>
+
+  <script>
+    ScrollReveal().reveal('.fade-up', {
+      distance: '40px',
+      duration: 800,
+      easing: 'ease-in-out',
+      origin: 'bottom',
+      interval: 200
+    });
+  </script>
 </body>
 </html>
