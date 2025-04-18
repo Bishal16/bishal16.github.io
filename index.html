@@ -117,7 +117,14 @@
     </section>
   </div>
 
-  <script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Fallback to show content if ScrollReveal fails or before scrolling
+    document.querySelectorAll('.fade-up').forEach(el => {
+      el.classList.add('reveal');
+    });
+
+    // Apply scroll reveal effect
     ScrollReveal().reveal('.fade-up', {
       distance: '40px',
       duration: 800,
@@ -125,6 +132,8 @@
       origin: 'bottom',
       interval: 200
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
