@@ -176,7 +176,7 @@ a.platform:hover .platform-name { color: var(--primary); }
 .publication-card { background: var(--bg-card); border-radius: 12px; padding: 28px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition-base); }
 .publication-card:hover { border-color: var(--primary); transform: translateY(-4px); }
 .publication-badge { display: inline-block; padding: 6px 14px; background: var(--gradient-primary); border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: white; margin-bottom: 16px; }
-.publication-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.publication-card h3 { font-size: 1rem; margin-bottom: 8px; line-height: 1.5; }
 .publication-year { color: var(--primary-light); font-weight: 500; margin-bottom: 12px; }
 .publication-description { color: var(--text-secondary); font-size: 0.95rem; }
 
