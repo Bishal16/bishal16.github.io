@@ -14,14 +14,21 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 const navbar = document.getElementById('navbar');
+const scrollProgress = document.getElementById('scroll-progress');
+
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    // Navbar background on scroll
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(15, 23, 42, 0.9)';
-        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
     }
+
+    // Scroll progress bar
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = scrollPercent + '%';
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -115,5 +122,5 @@ themeToggle.addEventListener('click', () => {
     setTheme(current === 'dark' ? 'light' : 'dark');
 });
 
-console.log('%c Mahathir Mohammad Bishal', 'color: #6366f1; font-size: 24px; font-weight: bold;');
+console.log('%c Mahathir Bishal', 'color: #6366f1; font-size: 24px; font-weight: bold;');
 console.log('%c Backend Engineer | Java & Spring Boot Specialist', 'color: #10b981; font-size: 14px;');
