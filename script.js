@@ -124,3 +124,61 @@ themeToggle.addEventListener('click', () => {
 
 console.log('%c Mahathir Bishal', 'color: #6366f1; font-size: 24px; font-weight: bold;');
 console.log('%c Backend Engineer | Java & Spring Boot Specialist', 'color: #10b981; font-size: 14px;');
+
+// Bouncing Blobs Animation
+const heroBlobs = document.querySelector('.hero-blobs');
+if (heroBlobs) {
+    const blobs = document.querySelectorAll('.blob');
+    const blobData = [];
+
+    // Initialize each blob with random position and velocity
+    blobs.forEach((blob, index) => {
+        const rect = heroBlobs.getBoundingClientRect();
+        const blobSize = blob.offsetWidth;
+
+        blobData.push({
+            x: Math.random() * (rect.width - blobSize),
+            y: Math.random() * (rect.height - blobSize),
+            vx: (Math.random() - 0.5) * 0.8 + (index === 0 ? 0.5 : index === 1 ? -0.4 : 0.3),
+            vy: (Math.random() - 0.5) * 0.8 + (index === 0 ? 0.3 : index === 1 ? 0.4 : -0.35),
+            size: blobSize
+        });
+    });
+
+    function animateBlobs() {
+        const rect = heroBlobs.getBoundingClientRect();
+
+        blobs.forEach((blob, index) => {
+            const data = blobData[index];
+
+            // Update position
+            data.x += data.vx;
+            data.y += data.vy;
+
+            // Bounce off walls
+            if (data.x <= -data.size * 0.3) {
+                data.x = -data.size * 0.3;
+                data.vx *= -1;
+            }
+            if (data.x >= rect.width - data.size * 0.7) {
+                data.x = rect.width - data.size * 0.7;
+                data.vx *= -1;
+            }
+            if (data.y <= -data.size * 0.3) {
+                data.y = -data.size * 0.3;
+                data.vy *= -1;
+            }
+            if (data.y >= rect.height - data.size * 0.7) {
+                data.y = rect.height - data.size * 0.7;
+                data.vy *= -1;
+            }
+
+            // Apply position
+            blob.style.transform = `translate(${data.x}px, ${data.y}px)`;
+        });
+
+        requestAnimationFrame(animateBlobs);
+    }
+
+    animateBlobs();
+}
