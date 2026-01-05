@@ -111,7 +111,7 @@ function setTheme(theme) {
 function getTheme() {
     const saved = localStorage.getItem('theme');
     if (saved) return saved;
-    return prefersDark.matches ? 'dark' : 'dark'; // Default to dark
+    return 'light'; // Default to light
 }
 
 // Initialize theme
