@@ -126,7 +126,7 @@ img { max-width: 100%; height: auto; }
 .highlight-item { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.85rem; }
 .highlight-item svg { color: var(--secondary); flex-shrink: 0; width: 16px; height: 16px; }
 .about-image { display: flex; justify-content: center; }
-.profile-image { width: 200px; height: 240px; border-radius: 10px; object-fit: cover; filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3)); }
+.profile-image { width: 260px; height: 310px; border-radius: 12px; object-fit: cover; filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3)); }
 
 /* Timeline */
 .timeline { max-width: 700px; margin: 0 auto; }
