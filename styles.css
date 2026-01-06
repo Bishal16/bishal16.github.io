@@ -8,7 +8,7 @@
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
     --bg-tertiary: #334155;
-    --bg-card: #1e293b;
+    --bg-card: #263448;
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
@@ -331,3 +331,4 @@ img { max-width: 100%; height: auto; }
 [data-theme="light"] .blob-2 { background: radial-gradient(circle, rgba(139, 92, 246, 0.45) 0%, transparent 70%); }
 [data-theme="light"] .blob-3 { background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, transparent 70%); }
 [data-theme="light"] .blob { opacity: 0.8; filter: blur(100px); }
+[data-theme="light"] .code-window { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); }
