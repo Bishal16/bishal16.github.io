@@ -1,5 +1,6 @@
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
+const navHighlight = document.getElementById('nav-highlight');
 
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -12,6 +13,28 @@ document.querySelectorAll('.nav-link').forEach(link => {
         navToggle.classList.remove('active');
     });
 });
+
+// Nav highlight animation
+if (navHighlight) {
+    const navLinksAll = document.querySelectorAll('.nav-link');
+
+    navLinksAll.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            const rect = link.getBoundingClientRect();
+            const menuRect = navMenu.getBoundingClientRect();
+
+            navHighlight.style.width = rect.width + 'px';
+            navHighlight.style.height = rect.height + 'px';
+            navHighlight.style.left = (rect.left - menuRect.left) + 'px';
+            navHighlight.style.top = (rect.top - menuRect.top) + 'px';
+            navHighlight.style.opacity = '0.15';
+        });
+    });
+
+    navMenu.addEventListener('mouseleave', () => {
+        navHighlight.style.opacity = '0';
+    });
+}
 
 const navbar = document.getElementById('navbar');
 const scrollProgress = document.getElementById('scroll-progress');
@@ -106,6 +129,11 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    // Update tooltip
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.setAttribute('data-tooltip', theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+    }
 }
 
 function getTheme() {
