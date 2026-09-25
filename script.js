@@ -210,3 +210,12 @@ if (heroBlobs) {
 
     animateBlobs();
 }
+
+// Track recruiter actions (resume views, email clicks) in Google Analytics
+document.querySelectorAll('[data-track]').forEach(el => {
+    el.addEventListener('click', () => {
+        if (typeof gtag === 'function') {
+            gtag('event', el.dataset.track, { link_url: el.href });
+        }
+    });
+});

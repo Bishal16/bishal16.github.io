@@ -1,32 +1,20 @@
 # Mahathir Mohammad Bishal - Portfolio
 
-Professional portfolio website for a Backend Engineer specializing in Java & Spring Boot.
+Portfolio site for a Backend Engineer specializing in Java & Spring Boot, live at **https://bishal16.github.io**.
 
-## Quick Deploy to GitHub Pages
-
-```bash
-cd /home/mahathir/Downloads/portfolio
-git init
-git add .
-git commit -m "Portfolio website"
-git branch -M main
-git remote add origin https://github.com/bishal16/bishal16.github.io.git
-git push -u origin main --force
-```
-
-Your site will be live at: **https://bishal16.github.io**
+Plain static HTML/CSS/JS, deployed by GitHub Pages from the `main` branch. There is no build step.
 
 ## Local Preview
 
 ```bash
-cd /home/mahathir/Downloads/portfolio
 python3 -m http.server 8000
 ```
 
 Open http://localhost:8000
 
-## Customization
+## Updating
 
-- Add your photo to `assets/` folder
-- Update project GitHub links in `index.html`
-- Add publication URLs
+- Resume: replace `assets/resume.pdf` (the site links to it directly)
+- Social preview image: `assets/og-image.png` (1200×630)
+- Content: `index.html`; styles: `styles.css`
+- Bump `<lastmod>` in `sitemap.xml` after content changes
